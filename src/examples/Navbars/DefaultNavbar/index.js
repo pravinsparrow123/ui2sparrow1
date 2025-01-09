@@ -43,7 +43,7 @@ import DefaultNavbarMobile from "examples/Navbars/DefaultNavbar/DefaultNavbarMob
 // Material Kit 2 React base styles
 import breakpoints from "assets/theme/base/breakpoints";
 
-function DefaultNavbar({ brand, routes, transparent, light, action, sticky, relative, center }) {
+function DefaultNavbar({ brand, routes, transparent, light, action, sticky, relative, center, bgColor1 }) {
   const [dropdown, setDropdown] = useState("");
   const [dropdownEl, setDropdownEl] = useState("");
   const [dropdownName, setDropdownName] = useState("");
@@ -467,8 +467,11 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
           backgroundColor: transparent ? transparentColor.main : rgba(white.main, 0.8),
           backdropFilter: transparent ? "none" : `saturate(200%) blur(30px)`,
         })}
+        bgColor={bgColor1 ? "dark" : "light"}
+
       >
-        <MKBox display="flex" justifyContent="space-between" alignItems="center">
+        
+        <MKBox display="flex" justifyContent="space-between" alignItems="center"  >
           <MKBox
             component={Link}
             to="/"
@@ -558,6 +561,7 @@ DefaultNavbar.defaultProps = {
   sticky: false,
   relative: false,
   center: false,
+  bgColor : "light"
 };
 
 // Typechecking props for the DefaultNavbar
@@ -589,6 +593,7 @@ DefaultNavbar.propTypes = {
   sticky: PropTypes.bool,
   relative: PropTypes.bool,
   center: PropTypes.bool,
+  bgColor1:PropTypes.string,
 };
 
 export default DefaultNavbar;

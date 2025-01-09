@@ -2,19 +2,20 @@ import React from "react";
 import theme from "assets/theme";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import DefaultNavbar from "../examples/Navbars/DefaultNavbar";
-import routes from "routes";
+//import DefaultNavbar from "../examples/Navbars/DefaultNavbar";
+//import routes from "routes";
 import MKBox from "components/MKBox";
 import MKInput from "components/MKInput";
 import MKButton from "components/MKButton";
 import MKTypography from "components/MKTypography";
 import Grid from "@mui/material/Grid";
+import bgImage from "assets/images/illustrations/illustration-reset.jpg";
 
 const HomePage = () => {
   return (
     <ThemeProvider theme={theme}>
          <CssBaseline />
-         <DefaultNavbar
+         {/* <DefaultNavbar
             brand="Sparrow Edutorii"
             routes={routes}
             action={{
@@ -24,8 +25,19 @@ const HomePage = () => {
             color: "info",
             }}
             sticky
-        />
-         <Grid container spacing={3} alignItems="center" >
+        /> */}
+         <Grid container spacing={2} alignItems="center" >
+         <Grid item xs={12} lg={6}>
+          <MKBox
+            display={{ xs: "none", lg: "flex" }}
+            width="calc(100% - 2rem)"
+            height="calc(100vh - 2rem)"
+            borderRadius="lg"
+            ml={2}
+            mt={2}
+            sx={{ backgroundImage: `url(${bgImage})` }}
+          />
+        </Grid>
          <Grid
           item
           xs={12}
@@ -97,7 +109,7 @@ const HomePage = () => {
                   </Grid>
                 </Grid>
                 <Grid container item justifyContent="center" xs={12} mt={5} mb={2}>
-                  <MKButton type="submit" variant="gradient" color="info">
+                  <MKButton type="submit" variant="gradient" color="dark">
                     Send Message
                   </MKButton>
                 </Grid>
@@ -105,7 +117,9 @@ const HomePage = () => {
             </MKBox>
           </MKBox>
         </Grid>
+    
          </Grid>
+
        
     </ThemeProvider>
     // <div>

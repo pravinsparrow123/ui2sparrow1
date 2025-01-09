@@ -11,6 +11,8 @@ import CssBaseline from "@mui/material/CssBaseline";
 import theme from "assets/theme";
 //import Presentation from "layouts/pages/presentation";
 import Home from "MyFiles/Home";
+import MyWorks from "MyFiles/MyWorks";
+import DefaultNavbar from "../examples/Navbars/DefaultNavbar";
 
 // Material Kit 2 React routes
 import routes from "routes";
@@ -39,9 +41,22 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+       <DefaultNavbar
+                  brand="Sparrow Edutorii"
+                  routes={routes}
+                  action={{
+                  type: "external",
+                  route: "https://www.creative-tim.com/product/material-kit-react",
+                  label: "free download",
+                  color: "dark"
+                  }}
+                  bgColor1="dark"
+                  sticky
+              />
       <Routes>
         {getRoutes(routes)}
         <Route path="/" element={<Home />} />
+        <Route path="/myworks" element={<MyWorks />} />
         <Route path="*" element={<Navigate to="/presentation" />} />
       </Routes>
     </ThemeProvider>

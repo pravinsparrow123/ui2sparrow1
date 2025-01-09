@@ -270,6 +270,12 @@ const routes = [
     icon: <GitHubIcon />,
     href: "https://www.github.com/creativetimofficial/material-kit-react",
   },
+  {
+    name: "My works",
+    icon: <GitHubIcon />,
+    href: "myworks",
+    
+  }
 ];
 
 export default routes;
