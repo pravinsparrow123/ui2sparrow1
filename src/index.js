@@ -26,7 +26,7 @@ const container = document.getElementById("root");
 const root = ReactDOMClient.createRoot(container);
 
 root.render(
-  <BrowserRouter basename="/ui2sparrow1">
+  <BrowserRouter>
     <Main />
   </BrowserRouter>
 );
